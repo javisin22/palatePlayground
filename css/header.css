@@ -35,14 +35,17 @@
 }
 
 
+/* Media query for screens with a maximum width of 600px */
 @media screen and (max-width: 600px) {
+  /* Styles for header links */
   .header a {
-    float: none;
-    display: block;
-    text-align: left;
+    float: none; /* Remove floating, stack elements vertically */
+    display: block; /* Display links as block elements */
+    text-align: left; /* Align text to the left */
   }
   
+  /* Styles for the right section of the header */
   .header-right {
-    float: none;
+    float: none; /* Remove floating */
   }
 }
