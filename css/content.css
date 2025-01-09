@@ -51,6 +51,49 @@ img {
   to {opacity: 1} /* Final opacity for the fading animation */
 }
 
+/* Styles for the reviews header section */
+.reviews-header {
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-start; /* Align items to the start of the container */
+  margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Styles for the filter section */
+#searchBar{
+  display: flex; /* Use flexbox layout */
+  margin-left: auto; /* Push the filter section to the right */
+  align-items: center; /* Align items to the center */
+  width: 200px; /* Set the width of the search bar */
+  padding: 8px; /* Add padding inside the search bar */
+  border: 1px solid gray; /* Set the border of the search bar */
+  border-radius: 4px; /* Round the corners of the search bar */
+  transition: border 0.3s ease; /* Smooth transition for border changes */
+}
+
+#searchBar:focus {
+  outline: none; /* Remove the default outline on focus */
+  border: 2px solid blue; /* Change the border color to blue on focus */
+}
+
+/* Positioning the feedback below the search bar */
+#feedback {
+  margin-top: 5px; /* Space between search bar and feedback */
+  color: gray; /* Neutral color for feedback text */
+  font-size: 0.9rem; /* Slightly smaller font size */
+  font-style: italic; /* Italicized text for hint-like appearance */
+  background-color: #f9f9f9; /* Light background for visibility */
+  border: 1px solid #ddd; /* Subtle border */
+  padding: 5px 10px; /* Padding for spacing around text */
+  border-radius: 4px; /* Rounded corners */
+  display: flex; /* Use flexbox layout */
+  margin-left: auto; /* Push the filter section to the right */
+  align-items: center; /* Align items to the center */
+  width: 200px; /* Set the width of the search bar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished look */
+  display: none; /* Hide the feedback by default */
+}
+
 /* Styling for the form, floated to the right */
 form {
   float: right;
