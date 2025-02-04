@@ -21,3 +21,61 @@
                      - If no matching recipe is found, make the feedback message visible and display a 'No matches found!'.
 */
 
+
+
+/* Javascript Event Handling */
+
+var searchBarEl = document.getElementById("searchBar");
+
+
+// // When Focusing
+// searchBarEl.addEventListener("focus", function() {
+
+// });
+
+
+// // Out of focus
+// searchBarEl.addEventListener("blur", function() {
+   
+// });
+
+var feedbackMessageEl = document.getElementById("feedback");
+
+function showFeedbackMessage(message) {
+   feedbackMessageEl.style.display = "block";
+   feedbackMessageEl.innerHTML = message;
+}
+
+function hideFeedbackMessage() {
+   feedbackMessageEl.style.display = "none";
+   feedbackMessageEl.innerHTML = "";
+}
+
+searchBarEl.onfocus = function() {
+   showFeedbackMessage("Search for any recipe listed on this page!");
+};
+
+searchBarEl.onblur = function() {
+   hideFeedbackMessage();
+};
+
+searchBarEl.addEventListener("input", function() {
+   var searchValue = searchBarEl.value.toLowerCase();
+   var recipeCards = document.getElementsByClassName("card");
+   var noMatchFound = true;
+
+   for (var i = 0; i < recipeCards.length; i++) {
+      var recipeName = recipeCards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+      if (recipeName.includes(searchValue)) {
+         recipeCards[i].style.display = "block";
+         hideFeedbackMessage();
+         noMatchFound = false;
+      } else {
+         recipeCards[i].style.display = "none";
+      }
+   }
+
+   if (noMatchFound) {
+      showFeedbackMessage("No matches found!");
+   }
+});
